@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин техники</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js"></script>
+</head>
+<body class ="light-theme">
+
+    <header>
+        <h1>Магазин Техники</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О магазине</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#catalog">Каталог товаров</a></li>
+                <button id="theme-toggle">Змінити тему</button>
+            </ul>
+        </nav>
+        <div class="cart">
+            <button id="cart-button" onclick="toggleCart()">Корзина </button>
+        </div>
+    </header>
+
+    <main>
+        <script>
+            const button = document.getElementById('theme-toggle');
+            button.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                document.body.classList.toggle('light-theme');
+            });
+        </script>
+        <section id="catalog" class="catalog">
+            <div class="product">
+                <img src="707c39bfff546612b5b4604fe86cda32.gif" alt="Смартфон">
+                <h2>Смартфон</h2>
+                <p>Цена: 20000 грн</p>
+                <button class="add-to-cart" data-id="1" data-name="Смартфон" data-price="10000">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="giphy.gif" alt="Ноутбук">
+                <h2>Ноутбук</h2>
+                <p>Цена: 30000 грн</p>
+                <button class="add-to-cart" data-id="2" data-name="Ноутбук" data-price="30000">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="tumblr_n4wozef1Rp1qd4q8ao1_500.gif.crdownload" alt="Телевизор">
+                <h2>PlayStation</h2>
+                <p>Цена: 20000 грн</p>
+                <button class="add-to-cart" data-id="3" data-name="Телевизор" data-price="20000">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="OIP.jfif" alt="Телевизор">
+                <h2>Стиралка</h2>
+                <p>Цена: 20000 грн</p>
+                <button class="add-to-cart" data-id="4" data-name="Телевизор" data-price="20000">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="LSFXC2496D-DZ.webp" alt="Телевизор">
+                <h2>Холодильник</h2>
+                <p>Цена: 35000 грн</p>
+                <button class="add-to-cart" data-id="5" data-name="Телевизор" data-price="20000">Добавить в корзину</button>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>О нас</h2>
+            <p>Мы — ваш надежный партнер в мире техники! Наш магазин предлагает широкий ассортимент современных электронных устройств, включая смартфоны, ноутбуки, телевизоры и бытовую технику. Мы стремимся предоставить нашим клиентам не только качественные товары, но и высокий уровень обслуживания, включая доставку и поддержку.</p>
+
+            <h3>Наши преимущества:</h3>
+            <ul>
+                <li>Широкий ассортимент товаров</li>
+                <li>Доступные цены</li>
+                <li>Быстрая доставка по всей стране</li>
+                <li>Качественная техническая поддержка</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Контактная информация</h2>
+            <p><strong>Адрес:</strong> г. Kiev, ул. Техники, д. 1</p>
+            <p><strong>Телефон:</strong> +380-123-45-67</p>
+            <p><strong>Email:</strong> info@techstore.com</p>
+
+            <h3>Оставьте отзыв о нашем магазине</h3>
+            <form id="feedback-form">
+                <textarea id="feedback" rows="4" placeholder="Ваш отзыв" required></textarea><br>
+                <button type="submit">Отправить отзыв</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; site creators: misha and oleksandr .</p>
+    </footer>
+</body>
+</html>
