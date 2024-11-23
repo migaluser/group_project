@@ -6,6 +6,8 @@
     <title>Магазин техники</title>
     <link rel="stylesheet" href="index.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 </head>
 <body class ="light-theme">
 
@@ -80,7 +82,7 @@
 
         <section id="contact" class="contact">
             <h2>Контактная информация</h2>
-            <p><strong>Адрес:</strong> г. Kiev, ул. Техники, д. 1</p>
+            <p><strong>Адрес:</strong>Киев ул. Примерная, 1</p>
             <p><strong>Телефон:</strong> +380-123-45-67</p>
             <p><strong>Email:</strong> info@techstore.com</p>
 
@@ -90,6 +92,23 @@
                 <button type="submit">Отправить отзыв</button>
             </form>
         </section>
+        
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    
+    var map = L.map('map').setView([50.4501, 30.5236], 12); 
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var storeLocation = [50.4501, 30.5236]; 
+    L.marker(storeLocation).addTo(map)
+        .bindPopup("<b>Магазин техники</b><br>Адрес: ул. Примерная, 1, Киев")
+        .openPopup();
+</script>
     </main>
     <footer>
         <p>&copy; site creators: misha and oleksandr .</p>

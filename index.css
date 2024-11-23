@@ -88,3 +88,10 @@ body.dark-theme {
 .product{
     color:#1f1c20fd;
 }
+#map {
+    width: 25%;
+    height: 150px;
+}
+html {
+    scroll-behavior: smooth;
+  }
