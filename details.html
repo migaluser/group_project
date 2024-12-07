@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./detailsStyle.css"/>
+  </head>
+  <body>
+    <div id=""></div>
+    <script>
+        document.addEventListener("DOMContentLoaded",function (){
+            const params = new URLSearchParams(window.location.search);
+            const cardId = params.get("id");
+            const cardDetailsContainer = document.getElementById("");
+            const cardData = {
+                phone: {
+                    title:"Телефон";
+                    description:
+                    "Кожне нове покоління оригінальних смартфонів від творців з Купертіно по-своєму дивує і відкриває перед користувачами низку нових можливостей для творчості, роботи та відпочинку. Яскравіший дисплей, приріст оперативної памʼяті та збільшення базового вбудованого сховища — ми отримали багато цікавого та несподіваного з виходом новинки Епл 2023 року. То ж пропонуємо ближче познайомитись новинкою, та розглянути ключові зміни в дизайні та характеристиках.Бажаєте стати одним з перших щасливих власників новинки?";
+                    images: [
+                    "./images/kjhgbnv-1397x1397.jpg.webp"
+                    ],
+                    price:"20000",
+                    reviews: [
+
+                    ],
+                },
+                laptop: {
+                    title:"Ноутбук";
+                    description:
+                    "30000";
+                    images: [
+                    "./images/2-2-1397x1397.jpg.webp"
+                    ],
+                    price:"",
+                    reviews: [
+
+                    ],
+                },
+                PlayStation: {
+                    title:"PlayStation";
+                    description:
+                    "20000";
+                    images: [
+                    "./images/ps5slim (1)-1397x1397.jpg.webp"
+                    ],
+                    price:"",
+                    reviews: [
+
+                    ],
+                },
+                tv: {
+                    title:"Телевізор";
+                    description:
+                    "";
+                    images: [
+
+                    ],
+                    price:"20000",
+                    reviews: [
+
+                    ],
+                },
+                fridge: {
+                    title:"Холодильник";
+                    description:
+                    "";
+                    images: [
+                    "./images/359825406.webp"
+                    ],
+                    price:"35000",
+                    reviews: [
+
+                    ],
+                },
+                
+            }
+        })
+           if (cardData[cardId])  {
+            const card = cardData[cardId];
+            const priceWithTax = parseFloat(card.price) + 20;
+            cardDetailsContainer.innerHTML = `<header>
+            <h1>Магазин Техники</h1>
+            <nav>
+            <ul>
+                <li><a class="" href="#home">Главная</a></li>
+                <li><a href="#about">О магазине</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#catalog">Каталог товаров</a></li>
+                <button id="theme-toggle">Змінити тему</button>
+            </ul>
+            </nav>
+            <div class="cart">
+            <button id="cart-button" onclick="toggleCart()">Корзина </button>
+            </div>
+            </header>
+            <main class ='main'>
+                <div class="images-conteiner">
+                <div class="small-images">
+                    ${card.images
+                    .slice(0,5)
+                    .map((img)=> `<img src="${img}" alt="${card.title}"/>`)
+                    .join("")
+                    }
+                </div>
+                <div class="large-image">
+                    <img src="${card.images[3]}" alt="${card.title}"/>
+                </div>
+                </div>
+                <div calss="details">
+                    <h1>${card.title}</h1>
+                </div>
+                <p class="price">Price: $${
+                    card.price
+                    }<span>$${priceWithTax}</span></p>
+                <p class="desc">${card.description}</p>
+                <hr class="line"/>
+                <p class="color_title">Select colors</p>
+                <div class="colors">
+                 <div class="color1"></div>
+                 <div class="color2"></div>
+                 <div class="color3"></div>
+                </div>
+                <hr class="line"/>
+                <p class="size_title">Choose Size</p>
+                <div class="sizes">
+                    ${card.sizes
+                    .slice(0,5)
+                    .map((c) => `<div class="">${c}</div>`)
+                    .join("")
+                    }
+                </div>
+                <hr class="line"/>
+                <button class="buy_btn">Add to Card</button>
+                </div>
+                </div>
+                <hr class="line"/>
+                <h2>All Reviews<h2>
+                <div class="reviews">
+                    ${card.reviews
+                    .slice(0,5)
+                    .map((c) => `<div class="reviews">${c}</div>`)
+                    .join("")
+                    }
+            </main>
+            `;
+            }else{
+                cardDetailsContainer.innerHTML=`<h1>Товар не знайдено</h1>`;
+            };
+           
+    </script>
+  </body>
+</html>

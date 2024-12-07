@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин техники</title>
     <link rel="stylesheet" href="index.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
 </head>
@@ -15,7 +14,7 @@
         <h1>Магазин Техники</h1>
         <nav>
             <ul>
-                <li><a href="#home">Главная</a></li>
+                <li><a class="" href="#home">Главная</a></li>
                 <li><a href="#about">О магазине</a></li>
                 <li><a href="#contact">Контакты</a></li>
                 <li><a href="#catalog">Каталог товаров</a></li>
@@ -26,7 +25,6 @@
             <button id="cart-button" onclick="toggleCart()">Корзина </button>
         </div>
     </header>
-
     <main>
         <script>
             const button = document.getElementById('theme-toggle');
@@ -35,32 +33,32 @@
                 document.body.classList.toggle('light-theme');
             });
         </script>
-        <section id="catalog" class="catalog">
-            <div class="product">
+        <section id="product" class="products">
+            <div class="card" data-id="phone">
                 <img src="707c39bfff546612b5b4604fe86cda32.gif" alt="Смартфон">
                 <h2>Смартфон</h2>
                 <p>Цена: 20000 грн</p>
                 <button class="add-to-cart" data-id="1" data-name="Смартфон" data-price="10000">Добавить в корзину</button>
             </div>
-            <div class="product">
+            <div class="card" data-id="laptop">
                 <img src="giphy.gif" alt="Ноутбук">
                 <h2>Ноутбук</h2>
                 <p>Цена: 30000 грн</p>
                 <button class="add-to-cart" data-id="2" data-name="Ноутбук" data-price="30000">Добавить в корзину</button>
             </div>
-            <div class="product">
+            <div class="card" data-id="PlayStation">
                 <img src="tumblr_n4wozef1Rp1qd4q8ao1_500.gif.crdownload" alt="Телевизор">
                 <h2>PlayStation</h2>
                 <p>Цена: 20000 грн</p>
                 <button class="add-to-cart" data-id="3" data-name="Телевизор" data-price="20000">Добавить в корзину</button>
             </div>
-            <div class="product">
+            <div class="card" data-id="tv">
                 <img src="OIP.jfif" alt="Телевизор">
                 <h2>Стиралка</h2>
                 <p>Цена: 20000 грн</p>
                 <button class="add-to-cart" data-id="4" data-name="Телевизор" data-price="20000">Добавить в корзину</button>
             </div>
-            <div class="product">
+            <div class="card" data-id="fridge">
                 <img src="LSFXC2496D-DZ.webp" alt="Телевизор">
                 <h2>Холодильник</h2>
                 <p>Цена: 35000 грн</p>
@@ -113,5 +111,6 @@
     <footer>
         <p>&copy; site creators: misha and oleksandr .</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
